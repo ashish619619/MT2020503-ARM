@@ -1,4 +1,4 @@
-/* To find the largest among 20 integers of an array */
+/* To find the largest among 15 integers of an array */
 
 #include <stdio.h>
 int main()
