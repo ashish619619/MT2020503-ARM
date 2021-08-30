@@ -1,4 +1,4 @@
-/* To count the number of integers in an array of 20 elements */
+/* To count the number of even integers in an array of 20 elements */
 
 #include <stdio.h>
 int main()
