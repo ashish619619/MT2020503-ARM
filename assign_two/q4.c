@@ -16,7 +16,7 @@ int isempty() {
    
 int isfull() {
 
-   if(top == MAXSIZE+1)
+   if(top == MAXSIZE)
       return 1;
    else
       return 0;
