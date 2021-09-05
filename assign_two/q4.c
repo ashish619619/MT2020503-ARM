@@ -2,33 +2,17 @@
 
 #include <stdio.h>
 
-int MAXSIZE = 8;       
-int stack[8];     
+int MAXSIZE = 5;       
+int stack[5];     
 int top = 0;            
-
-int isempty() {
-
-   if(top == 0)
-      return 1;
-   else
-      return 0;
-}
-   
-int isfull() {
-
-   if(top == MAXSIZE)
-      return 1;
-   else
-      return 0;
-}
 
 int Pop() {
    int data;
 	
-   if(!isempty()) {
+   if(!(top == 0)) {
       data = stack[top-1];
       top = top-1;   
-      return data;
+      printf("Element removed is: %d \n", data);
    } else {
       printf("Could not retrieve data, Stack is empty.\n");
    }
@@ -36,7 +20,7 @@ int Pop() {
 
 int Push(int data) {
 
-   if(!isfull()) {
+   if(!(top == MAXSIZE)) {
       stack[top] = data;  
       top = top + 1;   
       
@@ -57,28 +41,21 @@ int display() {
    
 
 int main() {
-int n, d;
-while(1)
-{
-printf("\nPress '1' to PUSH(add) an element OR '0' to POP(remove) an element \n");
-scanf(" %d", &n);
+   int n, d;
+   while(1) {
+      printf("\nPress '1' to PUSH(add) an element OR '0' to POP(remove) an element \n");
+      scanf(" %d", &n);
 
-if(n)
-{
-printf("\nEnter the element you wish to add to the stack \n");
-scanf(" %d", &d);
-Push(d);
-}
-else
-{
-Pop();
-}
+         if(n) {
+            printf("\nEnter the element you wish to add to the stack \n");
+            scanf(" %d", &d);
+            Push(d);
+   }
+         else {
+         Pop();
+   }
 
-display();
-}
-
-   printf("Stack full: %s\n" , isfull()?"true":"false");
-   printf("Stack empty: %s\n" , isempty()?"true":"false");
-   
+   display();
+   }
    return 0;
 }
