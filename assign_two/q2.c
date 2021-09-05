@@ -1,4 +1,4 @@
-// Implementation of full descending stack
+// Implementation of empty descending stack
 
 #include <stdio.h>
 
