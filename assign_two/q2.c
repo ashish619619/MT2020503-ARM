@@ -13,7 +13,7 @@ int Pop() {
    if(!(top == MAXSIZE-1)) {
       data = stack[top+1];
       top = top+1;   
-      return data;
+      printf("Element removed is: %d \n", data);
    } else {
       printf("Could not retrieve data, Stack is empty.\n");
    }
