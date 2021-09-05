@@ -45,26 +45,22 @@ void display() {
 
 int main() {
 
-int n, d;
-while(1)
-{
-printf("\nPress 1 to add and element, 0 to remove an element \n");
-scanf(" %d", &n);
-if(n)
-{
-printf("\nEnter the element you wish to add to the queue \n");
-scanf(" %d", &d);
-add_to_queue(d);
-}
-else
-{
-remove_from_Queue();
-}
+   int n, d;
+   while(1) {
+      printf("\nPress 1 to add and element, 0 to remove an element \n");
+      scanf(" %d", &n);
+         if(n) {
+            printf("\nEnter the element you wish to add to the queue \n");
+            scanf(" %d", &d);
+            add_to_queue(d);
+   }
+         else {
+            remove_from_Queue();
+   }
 
-printf("\nContents of the queue are: \n");
-display();
-}
+      printf("\nContents of the queue are: \n");
+      display();
+   }
   return 0;
 }
-
 
