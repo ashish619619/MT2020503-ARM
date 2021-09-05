@@ -2,9 +2,9 @@
 
 #include <stdio.h>
 
-int MAXSIZE = 8;       
-int stack[8];     
-int top = 8;            
+int MAXSIZE = 5;       
+int stack[5];     
+int top = 5;            
 
 int Pop() {
 
