@@ -7,22 +7,9 @@
 int ARR[SIZE];
 int front = -1, rear = -1;
 
-// Check if the queue is empty
-int empty() {
-  if (front == -1) return 1;
-  return 0;
-}
-
-// Check if the queue is full
-int full() {
-  if ((front == rear + 1) || (front == 0 && rear == SIZE - 1)) return 1;
-  return 0;
-}
-
-
 // To ADD an element
 void add_to_queue(int element) {
-  if (full())
+  if ((front == rear + 1) || (front == 0 && rear == SIZE - 1))
     printf("\n Queue is full!! \n");
   else {
     if (front == -1) front = 0;
@@ -36,7 +23,7 @@ void add_to_queue(int element) {
 // To delete an element
 int remove_from_Queue() {
   int element;
-  if (empty()) {
+  if (front == -1) {
     printf("\nQueue is empty !! \n");
     return (-1);
   } else {
@@ -58,8 +45,8 @@ int remove_from_Queue() {
 // Display the queue
 void display() {
   int i;
-  if (empty())
-    printf(" \n Empty Queue\n");
+  if (front == -1)
+    printf("\n Empty Queue\n");
   else {
     printf("\nposition of Front -> %d ", front);
     printf("\nCircular Queue elements -> ");
@@ -72,24 +59,21 @@ void display() {
 }
 
 int main() {
-int n, d;
-while(1)
-{
-printf("\nPress 1 to add and element, 0 to remove an element \n");
-scanf(" %d", &n);
-if(n)
-{
-printf("\nEnter the element you wish to add to the queue \n");
-scanf(" %d", &d);
-add_to_queue(d);
-}
-else
-{
-remove_from_Queue();
-}
+   int n, d;
+   while(1) {
+      printf("\nPress 1 to add and element, 0 to remove an element \n");
+      scanf(" %d", &n);
+         if(n) {
+            printf("\nEnter the element you wish to add to the queue \n");
+            scanf(" %d", &d);
+            add_to_queue(d);
+   }
+         else {
+            remove_from_Queue();
+   }
 
-printf("\nCreated Circular Queue: \n");
-display();
-}
+   printf("\nCreated Circular Queue: \n");
+   display();
+   }
   return 0;
 }
