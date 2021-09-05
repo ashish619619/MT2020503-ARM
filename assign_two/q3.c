@@ -16,14 +16,10 @@ int isempty() {
    
 int isfull() {
 
-   if(top == MAXSIZE)
+   if(top == MAXSIZE-1)
       return 1;
    else
       return 0;
-}
-
-int peek() {
-   return stack[top];
 }
 
 int Pop() {
@@ -50,7 +46,7 @@ int Push(int data) {
 
 int display() {
 
-   printf("Element at top of the stack: %d\n" ,peek());
+   printf("Element at top of the stack: %d\n" ,stack[top]);
    printf("Elements: \n");
 
    // print stack data 
